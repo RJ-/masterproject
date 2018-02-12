@@ -3,11 +3,14 @@ namespace App\Http\Controllers;
 
 use App\Notifications\PresHrdApproveActivity;
 use App\Notifications\PresHrdRecommendation;
+use App\Notifications\adminNotifyFaculty;
 use App\Notifications\PresApproval;
+
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
+
 use App\EducBackground;
 use App\CollegeCampus;
 use App\TrainingNeeds;
@@ -337,7 +340,6 @@ class PresController extends Controller
         $fac = array();
         foreach ($faculties as $faculty) {
           $fac[]= Faculty::where('id',$faculty)->first();
-
         }
 
         $vpaa = array();
@@ -508,7 +510,7 @@ class PresController extends Controller
       ));
 
       $faculty_id = $request->faculty_id;
-      $activity = PDactivity::where('id',$request->p_dactivity_id)->update(['activity_status' => 1]);
+      $activity = PDactivity::where('id',$request->p_dactivity_id);
 
       $pd = PDactivity::select('id','title')->where('id',$request->p_dactivity_id)->first();
       $user = Faculty::select('id')->where('id',$faculty_id)->first();

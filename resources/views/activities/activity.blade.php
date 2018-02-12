@@ -173,6 +173,7 @@
               <div class="col-md-12" style="text-align:center">
                 <a>
                   <form class="" action="{{route('joinActivity')}}" method="post">
+                    {{ csrf_field() }}
                       <input type="hidden" name="p_dactivity_id" value="{{$activity->id}}">
                       <input type="hidden" name="faculty_id" value="{{Auth::id()}}">
                       <input type="hidden" name="_token" value="{{Session::token()}}">
@@ -191,6 +192,7 @@
                           <a>
                             {!! Form::model($activity, ['route' => ['declineActivity', $activity->id], 'data-parsley-validate' => '',
                               'method' => 'PUT'])!!}
+                              {{ csrf_field() }}
                                 <input type="hidden" name="p_dactivity_id" value="{{$activity->id}}">
                                 <input type="hidden" name="faculty_id" value="{{Auth::id()}}">
                                 <input type="hidden" name="faculty_response" value="2">
@@ -205,6 +207,7 @@
                           <a>
                             {!! Form::model($activity, ['route' => ['acceptActivity', $activity->id], 'data-parsley-validate' => '',
                               'method' => 'PUT'])!!}
+                              {{ csrf_field() }}
                                 <input type="hidden" name="p_dactivity_id" value="{{$activity->id}}">
                                 <input type="hidden" name="faculty_id" value="{{Auth::id()}}">
                                 <input type="hidden" name="faculty_response" value="1">
@@ -222,6 +225,7 @@
                           <a>
                             {!! Form::model($activity, ['route' => ['declineActivity', $activity->id], 'data-parsley-validate' => '',
                               'method' => 'PUT'])!!}
+                              {{ csrf_field() }}
                                 <input type="hidden" name="p_dactivity_id" value="{{$activity->id}}">
                                 <input type="hidden" name="faculty_id" value="{{Auth::id()}}">
                                 <input type="hidden" name="faculty_response" value="2">
@@ -239,6 +243,7 @@
                           <a >
                             {!! Form::model($activity, ['route' => ['acceptActivity', $activity->id], 'data-parsley-validate' => '',
                               'method' => 'PUT'])!!}
+                              {{ csrf_field() }}
                                 <input type="hidden" name="p_dactivity_id" value="{{$activity->id}}">
                                 <input type="hidden" name="faculty_id" value="{{Auth::id()}}">
                                 <input type="hidden" name="faculty_response" value="1">

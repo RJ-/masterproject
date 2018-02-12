@@ -43,14 +43,14 @@ class PDactivityController extends Controller
       $endLastYear =  Carbon::create($lastyear->year, 12, 31, 0, 0, 0);
 
       $startThisYear =  Carbon::create($today->year, 1, 1, 0, 0, 0);
-      $endLastYear =  Carbon::create($today->year, 12, 31, 0, 0, 0);
+      $endThisYear =  Carbon::create($today->year, 12, 31, 0, 0, 0);
 
       $lastYear = PDactivity::where('createdBy', 0)
                             ->whereBetween('created_at', array($startLastYear->toDateTimeString(), $endLastYear->toDateTimeString()))
                             ->orderBy('id', 'desc')->sortable('created_at')->paginate(10);
 
       $thisYear = PDactivity::where('createdBy', 0)
-                            ->whereBetween('created_at', array($startThisYear->toDateTimeString(), $endLastYear->toDateTimeString()))
+                            ->whereBetween('created_at', array($startThisYear->toDateTimeString(), $endThisYear->toDateTimeString()))
                             ->orderBy('id', 'desc')->sortable('created_at')->paginate(10);
 
       $college = CollegeCampus::all();

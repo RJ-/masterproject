@@ -140,7 +140,7 @@
                             <div class="modal-dialog" role="document">
                                 <!--Content-->
                             <div class="modal-content">
-                              {!! Form::model( $activity->id, ['route' => ['adminNotifyFaculty', $activity->id], 'method' => 'put']) !!}
+                              {!! Form::model( $activity->id, ['route' => ['presNotifyFaculty', $activity->id], 'method' => 'put']) !!}
                                 <div class="card-block">
                                   {{-- header --}}
                                   <div class="text-xs-center">

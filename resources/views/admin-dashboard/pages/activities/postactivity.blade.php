@@ -133,13 +133,19 @@
         <center>
         <div class="col-md-8">
           {{ Form::button('<i class="fa fa-eraser"></i> Cancel', ['class' => 'btn btn-warning btn-lg cancel', 'onclick' => "goBack()"])}}
-          <button class="btn green btn-lg save" type="submit" name="button" value="Submit">
+          {{-- {{ Form::submit('<i class="fa fa-floppy-o"></i> Post Activity', ['class' => 'btn green btn-lg save', 'type'=>'submit'])}} --}}
+
+          <button class="btn green btn-lg save" type="submit" name="button" value="submit">
             <i class="fa fa-floppy-o"></i>  Post Activity
           </button>
         <input type="hidden" name="_token" value="{{Session::token()}}">
-      </div>
+
+        </div>
       </div>
     </form>
+    
+  </div>
+</div>
 
     {{-- <div class="row">
       <div class="col-md-8">
@@ -226,7 +232,7 @@
 
         </div>
       </div> --}}
-  </div><!--/.row-->
+  <!--/.row-->
 @endsection
 
 @section('javascript')

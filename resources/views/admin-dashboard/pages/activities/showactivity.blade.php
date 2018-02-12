@@ -64,8 +64,8 @@
               </td>
             </tr>
           @endif
-            <tr>
-              <th> <i class="fa fa-thumb-tack prefix"></i> Interested:</th>
+            {{-- <tr>
+              <th> <i class="fa fa-thumb-tack prefix"></i> Participants:</th>
               <td><b>{{$activity->faculty->count()}}</b> faculty
                 @if ($activity->faculty->count() == 1)
                   is
@@ -73,7 +73,7 @@
                   are
                 @endif
                 interested</td>
-            </tr>
+            </tr> --}}
           </table>
         </div>
       </div>
@@ -162,7 +162,7 @@
             @else
                 <div class="col-sm-6">
                   {!! Form::open(['route' => ['pdactivity.destroy', $activity->id], 'method' => 'DELETE']) !!}
-                      {!! Form::button('<i class="fa fa-times"></i> Delete', ['class' => 'btn red btn-block delete', 'type' => 'submit']) !!}
+                      {!! Form::button('<i class="fa fa-times"></i> Delete', ['class' => 'btn red btn-block danger', 'type' => 'submit']) !!}
                   {!! Form::close() !!}
                 </div>
                 <div class="col-sm-6">
@@ -206,7 +206,7 @@
 @section('javascript')
   <script type="text/javascript">
       $(document).on("click", ".danger", function(e) {
-            confirm("Are you sure you want to delete this data?");
+            confirm("Are you sure you want to delete this activity?");
       });
       $(document).on("click", ".approve", function(e) {
             confirm("Are you sure you want to approve the application?");

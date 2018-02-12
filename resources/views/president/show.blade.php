@@ -47,15 +47,15 @@ University President
               </div>
             </div>
           @else
-            @foreach ($activity as $activity)
-            <a href="{{route('president.edit', $activity->id)}}">
+            @foreach ($activity as $activities)
+            <a href="{{route('president.edit', $activities->id)}}">
               <button type="button" class="btn green pull-right" style="margin: 12px;"name="button"> <i class="fa fa-eye"></i> View Activity</button>
             </a>
             <div class="card">
               <div class="card-block">
                 <h4 class="card-title" class="text-center">
-                  <a href="{{route('president.edit', $activity->id)}}">
-                    <b>{{$activity->title}}</b>
+                  <a href="{{route('president.edit', $activities->id)}}">
+                    <b>{{$activities->title}}</b>
                   </a>
                 </h4>
                 <hr>
@@ -63,9 +63,9 @@ University President
                 <div class="col-md-6">
                   <b>Details:</b>
                   <p class="card-text">
-                    {{substr(strip_tags($activity->details), 0, 350)}}
+                    {{substr(strip_tags($activities->details), 0, 350)}}
                     <br>
-                    <a href="{{route('president.edit', $activity->id)}}"><i>Read more...</i></a>
+                    <a href="{{route('president.edit', $activities->id)}}"><i>Read more...</i></a>
                   </p>
                 </div>
                 <div class="col-md-4">
@@ -80,11 +80,11 @@ University President
                   </div>
                   <div class="row">
                     <b>Date:</b>
-                    {{date('M j, Y', strtotime($activity -> dateFrom))}} - {{date('M j, Y', strtotime($activity -> dateTo))}}
+                    {{date('M j, Y', strtotime($activities -> dateFrom))}} - {{date('M j, Y', strtotime($activities -> dateTo))}}
                   </div>
                   <div class="row">
                     <b>Venue:</b>
-                    {{$activity->venue}}
+                    {{$activities->venue}}
                   </div>
                 </div>
               </div>

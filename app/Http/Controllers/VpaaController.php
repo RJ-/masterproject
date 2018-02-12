@@ -23,6 +23,7 @@ use App\Field;
 
 use JavaScript;
 use Carbon\Carbon;
+use Notification;
 
 class VpaaController extends Controller
 {
@@ -258,12 +259,12 @@ class VpaaController extends Controller
       ));
 
       $faculty_id = $request->faculty_id;
-      $activity = PDactivity::where('id',$request->p_dactivity_id)->update(['activity_status' => 1]);
+      $activity = PDactivity::where('id',$request->p_dactivity_id);
 
       $pd = PDactivity::select('id','title')->where('id',$request->p_dactivity_id)->first();
       $user = Faculty::select('id')->where('id',$faculty_id)->first();
       $user['message'] = $request->message;
-      $user->notify(new adminNotifyFaculty($pd));
+      Notification::send($user, new adminNotifyFaculty($pd));
       return redirect()->route('vpaa.edit',$request->p_dactivity_id)->with('success', 'Faculty has been notified.');
 
     }

@@ -6,7 +6,7 @@
 
 @section('content')
   @section('header')<i class="fa fa-user prefix"></i>
-    <a href="{{''}}" onclick="location.href = document.referrer; return false;"><b>{{$faculty-> firstname}} {{$faculty-> middlename}} {{$faculty-> surname}}</b></a>
+    <a href="{{''}}" onclick="location.href = document.referrer; return false;"><b>{{$faculty-> firstname}} {{substr($faculty-> middlename, 0, 1)}}. {{$faculty-> surname}}</b></a>
   @endsection
   <div class="container">
     <div class="row">
@@ -197,7 +197,7 @@
                           <div class="row">
                               <div class="col-md-6"><i class="fa fa-tag prefix"></i>
                                 <b>Inclusive Dates:</b>
-                                {{date('M j, Y', strtotime($training -> dateFrom))}} - {{date('M j, Y', strtotime($seminar -> dateTo))}}
+                                {{date('M j, Y', strtotime($training -> dateFrom))}} - {{date('M j, Y', strtotime($training -> dateTo))}}
                               </div>
                           </div>
                           <hr>
@@ -243,7 +243,7 @@
                           <div class="row">
                               <div class="col-md-6"><i class="fa fa-tag prefix"></i>
                                 <b>Inclusive Dates:</b>
-                                {{date('M j, Y', strtotime($course -> dateFrom))}} - {{date('M j, Y', strtotime($seminar -> dateTo))}}
+                                {{date('M j, Y', strtotime($course -> dateFrom))}} - {{date('M j, Y', strtotime($course -> dateTo))}}
                               </div>
                           </div>
                           <hr>

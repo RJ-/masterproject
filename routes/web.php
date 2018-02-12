@@ -157,7 +157,7 @@ Route::put('/adminNotifyFaculty/{id}', [
 ]);
 
 Route::put('/presNotifyFaculty/{id}', [
-  'uses' => 'VpaaController@adminNotifyFaculty',
+  'uses' => 'PresController@adminNotifyFaculty',
   'as' => 'presNotifyFaculty'
 ]);
 //end admin routes

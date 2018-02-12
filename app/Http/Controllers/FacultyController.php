@@ -11,7 +11,7 @@ use App\TrainingNeeds;
 use App\Administrator;
 use App\EducCategory;
 use App\JoinActivity;
-use App\PDActivity;
+use App\PDactivity;
 use App\PDcategory;
 use App\Category;
 use App\Faculty;
